@@ -8,14 +8,14 @@
 
 | # | Tarea | Prioridad | Estado |
 |---|-------|-----------|--------|
-| 1 | Renombrar `ariprojects.html` → `index.html` | P1 | Pendiente |
-| 2 | Actualizar `README.md` (cómo correr local, estructura, deploy) | P1 | Pendiente |
-| 3 | Implementar hamburger menu para mobile | P1 | Pendiente |
-| 4 | Conectar formulario de contacto con Formspree | P1 | Pendiente |
+| 1 | Renombrar `ariprojects.html` → `index.html` | P1 | ✅ Done |
+| 2 | Actualizar `README.md` (cómo correr local, estructura, deploy) | P1 | ✅ Done |
+| 3 | Implementar hamburger menu para mobile | P1 | ✅ Done |
+| 4 | Conectar formulario de contacto con Formspree | P1 | ✅ Done |
 | 5 | Agregar `favicon.ico` y `apple-touch-icon.png` | P2 | Pendiente |
 | 6 | Metatags SEO: `description`, `keywords`, OG tags, Twitter Card | P2 | Pendiente |
 | 7 | Configurar GitHub Pages (rama `main`, directorio raíz) | P1 | Pendiente |
-| 8 | Crear `.gitignore` básico | P2 | Pendiente |
+| 8 | Crear `.gitignore` básico | P2 | ✅ Done |
 
 ---
 

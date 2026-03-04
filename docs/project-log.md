@@ -24,11 +24,14 @@
 
 ## Cambios Importantes
 
-### Sprint 1 (2026-03-04)
+### Sprint 1 (2026-03-04) — COMPLETADO
 - Repositorio clonado en `C:\dev\AriSoftwareWeb`
-- Inventario inicial: `ariprojects.html`, `logo_blue.png`, `README.md`
-- Creados: `docs/project-log.md`, `docs/backlog.md`
-- Sitio existente tiene: Nav bilingüe, Hero, Strip de métricas, Servicios (PM/CX/EX), About, Contacto, Footer
+- `ariprojects.html` renombrado a `index.html`
+- Hamburger menu mobile implementado (breakpoint 900px, animación X, cierre por click fuera)
+- Formulario de contacto conectado a Formspree (`mnjberna`) — envío async sin redirect
+- Mensajes de éxito/error bilingües in-page
+- Creados: `docs/project-log.md`, `docs/backlog.md`, `.gitignore`
+- `README.md` actualizado con instrucciones de setup y deploy
 
 ---
 
