@@ -158,25 +158,14 @@
     padding: 60px 48px; position: relative; z-index: 2; width: 100%;
   }
   .hero-card {
-    /* Keep the "staggered" look WITHOUT breaking hover movement.
-       We use a per-card offset variable instead of margin-top, and we compose it with hover translate. */
-    --card-offset: 0px;
-
     background: var(--white); border: 1px solid var(--border); border-radius: 12px;
     padding: 28px 24px; box-shadow: 0 4px 24px rgba(13,43,107,0.08);
-
-    transform: translateY(var(--card-offset));
     transition: transform .3s, box-shadow .3s;
-    will-change: transform;
   }
   .hero-card:hover {
-    transform: translateY(calc(var(--card-offset) - 4px));
+    transform: translateY(-4px);
     box-shadow: 0 12px 40px rgba(13,43,107,0.14);
   }
-
-  /* Stagger offsets (previously implemented via margin-top). */
-  .hero-card:nth-child(2) { --card-offset: 32px; }
-  .hero-card:nth-child(3) { --card-offset: -16px; }
   .card-icon {
     width: 44px; height: 44px; border-radius: 10px; background: var(--blue-light);
     display: flex; align-items: center; justify-content: center;
