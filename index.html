@@ -511,25 +511,25 @@
 <!-- STRIP -->
 <div class="strip reveal">
   <div class="strip-item">
-    <div class="strip-num">+<span>80</span></div>
+    <div class="strip-num">+<span data-target="80">0</span></div>
     <div class="strip-label" data-lang="en">Projects Delivered</div>
     <div class="strip-label" data-lang="es">Proyectos Entregados</div>
   </div>
   <div class="strip-divider"></div>
   <div class="strip-item">
-    <div class="strip-num"><span>15</span>+</div>
+    <div class="strip-num"><span data-target="15">0</span>+</div>
     <div class="strip-label" data-lang="en">Years of Experience</div>
     <div class="strip-label" data-lang="es">Años de Experiencia</div>
   </div>
   <div class="strip-divider"></div>
   <div class="strip-item">
-    <div class="strip-num">+<span>40</span></div>
+    <div class="strip-num">+<span data-target="40">0</span></div>
     <div class="strip-label" data-lang="en">Organizations Transformed</div>
     <div class="strip-label" data-lang="es">Organizaciones Transformadas</div>
   </div>
   <div class="strip-divider"></div>
   <div class="strip-item">
-    <div class="strip-num"><span>3</span></div>
+    <div class="strip-num"><span data-target="3">0</span></div>
     <div class="strip-label" data-lang="en">Specialized Mega-Services</div>
     <div class="strip-label" data-lang="es">Mega-Servicios Especializados</div>
   </div>
@@ -818,11 +818,26 @@
     }
   });
 
-  // ── Scroll reveal ──
+  // ── Scroll reveal + counter ──
+  function animateCounter(el) {
+    const target = +el.dataset.target;
+    const duration = 1400;
+    const start = performance.now();
+    const update = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      el.textContent = Math.floor(ease * target);
+      if (progress < 1) requestAnimationFrame(update);
+      else el.textContent = target;
+    };
+    requestAnimationFrame(update);
+  }
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
+        entry.target.querySelectorAll('[data-target]').forEach(animateCounter);
         observer.unobserve(entry.target);
       }
     });
