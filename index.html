@@ -314,6 +314,13 @@
     font-size: 15px; font-weight: 600; cursor: pointer; transition: background .25s, transform .2s;
   }
   .btn-form:hover { background: var(--blue-mid); transform: translateY(-2px); }
+  .btn-form:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+  .form-feedback {
+    display: none; border-radius: 8px; padding: 16px 20px;
+    font-size: 14px; font-weight: 500; text-align: center; margin-top: 16px;
+  }
+  .form-feedback.success { background: rgba(79,142,247,0.15); border: 1px solid var(--blue-accent); color: var(--blue-light); }
+  .form-feedback.error   { background: rgba(220,38,38,0.15);  border: 1px solid #f87171; color: #fca5a5; }
 
   /* ─── FOOTER ─── */
   footer {
@@ -693,25 +700,26 @@
       </div>
     </div>
 
-    <div class="contact-form">
+    <form class="contact-form" id="contact-form"
+          action="https://formspree.io/f/mnjberna" method="POST" novalidate>
       <div class="form-row">
         <div class="form-group">
           <label data-lang="en">Name</label><label data-lang="es">Nombre</label>
-          <input type="text" placeholder="Your name / Tu nombre">
+          <input type="text" name="name" required placeholder="Your name / Tu nombre">
         </div>
         <div class="form-group">
           <label data-lang="en">Company</label><label data-lang="es">Empresa</label>
-          <input type="text" placeholder="Company / Empresa">
+          <input type="text" name="company" placeholder="Company / Empresa">
         </div>
       </div>
       <div class="form-group">
         <label>Email</label>
-        <input type="email" placeholder="your@email.com">
+        <input type="email" name="email" required placeholder="your@email.com">
       </div>
       <div class="form-group">
         <label data-lang="en">Service of Interest</label>
         <label data-lang="es">Servicio de interés</label>
-        <select>
+        <select name="service">
           <option value="" disabled selected>— Select / Selecciona —</option>
           <option>Project Management</option>
           <option>CX — Customer Experience</option>
@@ -722,11 +730,15 @@
       <div class="form-group">
         <label data-lang="en">Tell us your challenge</label>
         <label data-lang="es">Cuéntanos tu desafío</label>
-        <textarea placeholder="What problem do you need to solve? / ¿Qué problema necesitas resolver?"></textarea>
+        <textarea name="message" required placeholder="What problem do you need to solve? / ¿Qué problema necesitas resolver?"></textarea>
       </div>
-      <button class="btn-form" data-lang="en">Send Message →</button>
-      <button class="btn-form" data-lang="es">Enviar mensaje →</button>
-    </div>
+      <button type="submit" class="btn-form" data-lang="en">Send Message →</button>
+      <button type="submit" class="btn-form" data-lang="es">Enviar mensaje →</button>
+      <div class="form-feedback success" id="form-success" data-lang="en">Message sent! We'll get back to you shortly.</div>
+      <div class="form-feedback success" id="form-success-es" data-lang="es">¡Mensaje enviado! Te respondemos a la brevedad.</div>
+      <div class="form-feedback error"   id="form-error"   data-lang="en">Something went wrong. Please try again or email us directly.</div>
+      <div class="form-feedback error"   id="form-error-es" data-lang="es">Algo salió mal. Intenta de nuevo o escríbenos directamente.</div>
+    </form>
   </div>
 </section>
 
@@ -769,6 +781,37 @@
   document.addEventListener('click', (e) => {
     if (!hamburger.contains(e.target) && !mobileNav.contains(e.target)) {
       closeMobileNav();
+    }
+  });
+
+  // ── Contact form (Formspree async) ──
+  const contactForm = document.getElementById('contact-form');
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btns = contactForm.querySelectorAll('.btn-form');
+    btns.forEach(b => b.disabled = true);
+    ['form-success','form-success-es','form-error','form-error-es']
+      .forEach(id => document.getElementById(id).style.display = 'none');
+
+    try {
+      const res = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        document.getElementById('form-success').style.display = 'block';
+        document.getElementById('form-success-es').style.display = 'block';
+        contactForm.reset();
+      } else {
+        document.getElementById('form-error').style.display = 'block';
+        document.getElementById('form-error-es').style.display = 'block';
+      }
+    } catch {
+      document.getElementById('form-error').style.display = 'block';
+      document.getElementById('form-error-es').style.display = 'block';
+    } finally {
+      btns.forEach(b => b.disabled = false);
     }
   });
 </script>
