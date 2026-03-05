@@ -38,7 +38,10 @@
 <link rel="apple-touch-icon"          href="favicon.svg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap"></noscript>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -51,7 +54,7 @@
     --blue-accent: #4F8EF7;
     --text-dark:   #0F1C35;
     --text-mid:    #3A4F72;
-    --text-light:  #7A90B8;
+    --text-light:  #526B8E;
     --white:       #FFFFFF;
     --border:      #C7D9F5;
   }
@@ -427,7 +430,7 @@
 <body class="lang-en">
 
 <!-- NAV -->
-<nav>
+<nav aria-label="Main navigation">
   <a href="#" class="nav-logo">
     <picture>
       <source srcset="logo_blue.webp" type="image/webp">
@@ -456,7 +459,7 @@
 </nav>
 
 <!-- MOBILE NAV -->
-<div class="mobile-nav" id="mobile-nav" role="navigation">
+<div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
   <a href="#services" data-lang="en" onclick="closeMobileNav()">Services</a>
   <a href="#services" data-lang="es" onclick="closeMobileNav()">Servicios</a>
   <a href="#about"    data-lang="en" onclick="closeMobileNav()">About</a>
@@ -1098,22 +1101,22 @@
           action="https://formspree.io/f/mnjberna" method="POST" novalidate>
       <div class="form-row">
         <div class="form-group">
-          <label data-lang="en">Name</label><label data-lang="es">Nombre</label>
-          <input type="text" name="name" required placeholder="Your name / Tu nombre">
+          <label for="field-name" data-lang="en">Name</label><label for="field-name" data-lang="es">Nombre</label>
+          <input type="text" id="field-name" name="name" required placeholder="Your name / Tu nombre">
         </div>
         <div class="form-group">
-          <label data-lang="en">Company</label><label data-lang="es">Empresa</label>
-          <input type="text" name="company" placeholder="Company / Empresa">
+          <label for="field-company" data-lang="en">Company</label><label for="field-company" data-lang="es">Empresa</label>
+          <input type="text" id="field-company" name="company" placeholder="Company / Empresa">
         </div>
       </div>
       <div class="form-group">
-        <label>Email</label>
-        <input type="email" name="email" required placeholder="your@email.com">
+        <label for="field-email">Email</label>
+        <input type="email" id="field-email" name="email" required placeholder="your@email.com">
       </div>
       <div class="form-group">
-        <label data-lang="en">Service of Interest</label>
-        <label data-lang="es">Servicio de interés</label>
-        <select name="service">
+        <label for="field-service" data-lang="en">Service of Interest</label>
+        <label for="field-service" data-lang="es">Servicio de interés</label>
+        <select id="field-service" name="service">
           <option value="" disabled selected>— Select / Selecciona —</option>
           <option>Project Management</option>
           <option>CX — Customer Experience</option>
@@ -1122,9 +1125,9 @@
         </select>
       </div>
       <div class="form-group">
-        <label data-lang="en">Tell us your challenge</label>
-        <label data-lang="es">Cuéntanos tu desafío</label>
-        <textarea name="message" required placeholder="What problem do you need to solve? / ¿Qué problema necesitas resolver?"></textarea>
+        <label for="field-message" data-lang="en">Tell us your challenge</label>
+        <label for="field-message" data-lang="es">Cuéntanos tu desafío</label>
+        <textarea id="field-message" name="message" required placeholder="What problem do you need to solve? / ¿Qué problema necesitas resolver?"></textarea>
       </div>
       <button type="submit" class="btn-form" data-lang="en">Send Message →</button>
       <button type="submit" class="btn-form" data-lang="es">Enviar mensaje →</button>
