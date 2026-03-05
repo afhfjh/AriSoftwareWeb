@@ -863,7 +863,11 @@
     document.documentElement.lang = lang;
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+    localStorage.setItem('ap-lang', lang);
   }
+
+  // Restore saved language preference on load
+  setLang(localStorage.getItem('ap-lang') || 'en');
 
   // ── Hamburger menu ──
   const hamburger = document.getElementById('nav-hamburger');
