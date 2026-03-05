@@ -12,9 +12,9 @@
 | 2 | Actualizar `README.md` (cómo correr local, estructura, deploy) | P1 | ✅ Done |
 | 3 | Implementar hamburger menu para mobile | P1 | ✅ Done |
 | 4 | Conectar formulario de contacto con Formspree | P1 | ✅ Done |
-| 5 | Agregar `favicon.ico` y `apple-touch-icon.png` | P2 | Pendiente |
-| 6 | Metatags SEO: `description`, `keywords`, OG tags, Twitter Card | P2 | Pendiente |
-| 7 | Configurar GitHub Pages (rama `main`, directorio raíz) | P1 | Pendiente |
+| 5 | Agregar `favicon.ico` y `apple-touch-icon.png` | P2 | ✅ Done |
+| 6 | Metatags SEO: `description`, `keywords`, OG tags, Twitter Card | P2 | ✅ Done |
+| 7 | Configurar GitHub Pages + dominio ariprojects.com | P1 | ✅ Done |
 | 8 | Crear `.gitignore` básico | P2 | ✅ Done |
 
 ---

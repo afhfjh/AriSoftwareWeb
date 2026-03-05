@@ -24,7 +24,7 @@
 
 ## Cambios Importantes
 
-### Sprint 1 (2026-03-04) — COMPLETADO
+### Sprint 1 (2026-03-04) — ✅ COMPLETADO
 - Repositorio clonado en `C:\dev\AriSoftwareWeb`
 - `ariprojects.html` renombrado a `index.html`
 - Hamburger menu mobile implementado (breakpoint 900px, animación X, cierre por click fuera)
@@ -32,6 +32,9 @@
 - Mensajes de éxito/error bilingües in-page
 - Creados: `docs/project-log.md`, `docs/backlog.md`, `.gitignore`
 - `README.md` actualizado con instrucciones de setup y deploy
+- Favicon SVG (AP azul corporativo) + metatags SEO + OG tags
+- GitHub Pages configurado → `ariprojects.com` live con HTTPS
+- DNS migrado de Firebase a GitHub Pages (4 A records + CNAME www)
 
 ---
 
