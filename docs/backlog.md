@@ -38,10 +38,10 @@
 |---|-------|-----------|-------|
 | 15 | Dominio personalizado `ariprojects.com` en GitHub Pages | P1 | Requiere configuración DNS |
 | 16 | HTTPS forzado (automático con GitHub Pages + dominio) | P1 | Depende de #15 |
-| 17 | Lighthouse audit — target 90+ en Performance, SEO, Accessibility | P2 | |
-| 18 | Optimizar `logo_blue.png` → WebP + lazy load | P2 | |
-| 19 | Política de privacidad / aviso legal (GDPR básico) | P2 | Si hay formulario activo |
-| 20 | LinkedIn + redes sociales links en footer | P3 | Pendiente info del cliente |
+| 17 | Lighthouse audit — target 90+ en Performance, SEO, Accessibility | P2 | ✅ Done — 93/94/100/100 |
+| 18 | Optimizar `logo_blue.png` → WebP + lazy load | P2 | ✅ Done — 80% reducción de peso |
+| 19 | Política de privacidad / aviso legal (GDPR básico) | P2 | ✅ Done — privacy.html EN/ES |
+| 20 | LinkedIn + redes sociales links en footer | P3 | Comentado, pendiente cuentas |
 
 ---
 
