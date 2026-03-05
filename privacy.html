@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — AriProjects</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --blue-deep:   #0D2B6B;
+    --blue-corp:   #1A4FBF;
+    --blue-mid:    #2E6DDB;
+    --blue-light:  #D6E4FF;
+    --blue-pale:   #EEF4FF;
+    --blue-accent: #4F8EF7;
+    --text-dark:   #0F1C35;
+    --text-mid:    #3A4F72;
+    --text-light:  #7A90B8;
+    --white:       #FFFFFF;
+    --border:      #C7D9F5;
+  }
+  body { font-family: 'DM Sans', sans-serif; color: var(--text-dark); background: var(--white); }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 6%; height: 76px;
+    background: var(--blue-deep); border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-logo img { height: 50px; display: block; }
+  .nav-back {
+    color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px;
+    font-weight: 500; display: flex; align-items: center; gap: 8px; transition: color .2s;
+  }
+  .nav-back:hover { color: var(--white); }
+  .nav-back::before { content: '←'; }
+
+  /* CONTENT */
+  .policy-wrap {
+    max-width: 760px; margin: 0 auto;
+    padding: 120px 24px 80px;
+  }
+  .policy-eyebrow {
+    font-size: 11px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 2.5px; color: var(--blue-corp); margin-bottom: 16px; display: block;
+  }
+  .policy-title {
+    font-family: 'Playfair Display', serif; font-size: clamp(28px,4vw,42px);
+    font-weight: 700; color: var(--blue-deep); line-height: 1.2; margin-bottom: 12px;
+  }
+  .policy-updated { font-size: 13px; color: var(--text-light); margin-bottom: 48px; }
+  .policy-section { margin-bottom: 40px; }
+  .policy-section h2 {
+    font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700;
+    color: var(--blue-deep); margin-bottom: 12px; padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .policy-section p { font-size: 15px; color: var(--text-mid); line-height: 1.8; margin-bottom: 12px; font-weight: 300; }
+  .policy-section ul { padding-left: 20px; margin-bottom: 12px; }
+  .policy-section ul li { font-size: 15px; color: var(--text-mid); line-height: 1.8; font-weight: 300; margin-bottom: 4px; }
+  .policy-section a { color: var(--blue-corp); }
+
+  /* LANG TOGGLE */
+  [data-lang] { display: none; }
+  body.lang-en [data-lang="en"] { display: block; }
+  body.lang-es [data-lang="es"] { display: block; }
+  .lang-toggle {
+    display: flex; align-items: center;
+    background: rgba(255,255,255,0.1); border-radius: 20px; padding: 3px; gap: 2px;
+  }
+  .lang-btn {
+    border: none; background: transparent; color: rgba(255,255,255,0.6);
+    font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700;
+    padding: 5px 13px; border-radius: 16px; cursor: pointer; transition: all .2s; letter-spacing: 0.8px;
+  }
+  .lang-btn.active { background: var(--white); color: var(--blue-deep); }
+
+  /* FOOTER */
+  footer {
+    background: #080F1E; padding: 32px 6%;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+  }
+  footer img { height: 34px; }
+  footer span { font-size: 12px; color: rgba(255,255,255,0.3); }
+</style>
+</head>
+<body class="lang-en">
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo_blue.png" alt="AriProjects"></a>
+  <div style="display:flex; align-items:center; gap:24px;">
+    <a href="index.html" class="nav-back" data-lang="en">Back to site</a>
+    <a href="index.html" class="nav-back" data-lang="es">Volver al sitio</a>
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn"        id="btn-es" onclick="setLang('es')">ES</button>
+    </div>
+  </div>
+</nav>
+
+<div class="policy-wrap">
+
+  <!-- EN -->
+  <div data-lang="en">
+    <span class="policy-eyebrow">Legal</span>
+    <h1 class="policy-title">Privacy Policy</h1>
+    <p class="policy-updated">Last updated: March 2026</p>
+
+    <div class="policy-section">
+      <h2>1. Who We Are</h2>
+      <p>This website is operated by <strong>ARIPROJECTS LLC</strong>, a company legally incorporated in the State of Florida, United States of America, located at Sunrise, FL 33351. Contact: <a href="mailto:contact@ariprojects.com">contact@ariprojects.com</a></p>
+    </div>
+
+    <div class="policy-section">
+      <h2>2. Information We Collect</h2>
+      <p>We collect information in two ways:</p>
+      <ul>
+        <li><strong>Contact form:</strong> name, company, email address, service of interest, and message content — provided voluntarily by you.</li>
+        <li><strong>Analytics data:</strong> usage data collected automatically via Google Analytics 4 (GA4), including pages visited, time on site, browser type, and approximate location. This data is anonymized and aggregated.</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2>3. How We Use Your Information</h2>
+      <ul>
+        <li>To respond to your inquiry and provide the requested information.</li>
+        <li>To understand how visitors use our website and improve its content.</li>
+        <li>We do not sell, rent, or share your personal data with third parties for marketing purposes.</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2>4. Third-Party Services</h2>
+      <p>We use the following third-party services that may process your data:</p>
+      <ul>
+        <li><strong>Formspree</strong> (formspree.io) — processes contact form submissions. View their <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>.</li>
+        <li><strong>Google Analytics 4</strong> — collects anonymized website usage statistics. View <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2>5. Cookies</h2>
+      <p>This site uses analytics cookies from Google Analytics 4 to understand site usage. These cookies do not identify you personally. You can disable cookies in your browser settings or opt out of Google Analytics via <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google's opt-out tool</a>.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>6. Data Retention</h2>
+      <p>Contact form data is retained only as long as necessary to respond to your inquiry. Analytics data is retained according to Google Analytics default settings (26 months).</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>7. Your Rights</h2>
+      <p>Depending on your location, you may have the right to access, correct, or request deletion of your personal data. To exercise these rights, contact us at <a href="mailto:contact@ariprojects.com">contact@ariprojects.com</a>. We will respond within 30 days.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>8. Changes to This Policy</h2>
+      <p>We may update this policy periodically. The "Last updated" date at the top of this page will reflect any changes. Continued use of the site constitutes acceptance of the updated policy.</p>
+    </div>
+  </div>
+
+  <!-- ES -->
+  <div data-lang="es">
+    <span class="policy-eyebrow">Legal</span>
+    <h1 class="policy-title">Política de Privacidad</h1>
+    <p class="policy-updated">Última actualización: marzo 2026</p>
+
+    <div class="policy-section">
+      <h2>1. Quiénes Somos</h2>
+      <p>Este sitio web es operado por <strong>ARIPROJECTS LLC</strong>, empresa legalmente constituida en el Estado de Florida, Estados Unidos de América, ubicada en Sunrise, FL 33351. Contacto: <a href="mailto:contact@ariprojects.com">contact@ariprojects.com</a></p>
+    </div>
+
+    <div class="policy-section">
+      <h2>2. Información que Recopilamos</h2>
+      <p>Recopilamos información de dos formas:</p>
+      <ul>
+        <li><strong>Formulario de contacto:</strong> nombre, empresa, correo electrónico, servicio de interés y mensaje — proporcionados voluntariamente por usted.</li>
+        <li><strong>Datos de analítica:</strong> datos de uso recopilados automáticamente a través de Google Analytics 4 (GA4), incluyendo páginas visitadas, tiempo en el sitio, tipo de navegador y ubicación aproximada. Estos datos son anonimizados y agregados.</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2>3. Cómo Usamos su Información</h2>
+      <ul>
+        <li>Para responder a su consulta y proporcionar la información solicitada.</li>
+        <li>Para entender cómo los visitantes usan nuestro sitio web y mejorar su contenido.</li>
+        <li>No vendemos, alquilamos ni compartimos sus datos personales con terceros para fines de marketing.</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2>4. Servicios de Terceros</h2>
+      <p>Utilizamos los siguientes servicios de terceros que pueden procesar sus datos:</p>
+      <ul>
+        <li><strong>Formspree</strong> (formspree.io) — procesa los envíos del formulario de contacto. Consulte su <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">Política de Privacidad</a>.</li>
+        <li><strong>Google Analytics 4</strong> — recopila estadísticas de uso del sitio de forma anonimizada. Consulte la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidad de Google</a>.</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2>5. Cookies</h2>
+      <p>Este sitio utiliza cookies de analítica de Google Analytics 4 para comprender el uso del sitio. Estas cookies no le identifican personalmente. Puede desactivar las cookies en la configuración de su navegador u optar por no participar en Google Analytics mediante la <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">herramienta de exclusión de Google</a>.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>6. Retención de Datos</h2>
+      <p>Los datos del formulario de contacto se conservan solo el tiempo necesario para responder a su consulta. Los datos de analítica se conservan según la configuración predeterminada de Google Analytics (26 meses).</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>7. Sus Derechos</h2>
+      <p>Dependiendo de su ubicación, puede tener derecho a acceder, corregir o solicitar la eliminación de sus datos personales. Para ejercer estos derechos, contáctenos en <a href="mailto:contact@ariprojects.com">contact@ariprojects.com</a>. Responderemos en un plazo de 30 días.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>8. Cambios en esta Política</h2>
+      <p>Podemos actualizar esta política periódicamente. La fecha de "Última actualización" en la parte superior de esta página reflejará cualquier cambio. El uso continuado del sitio constituye la aceptación de la política actualizada.</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <img src="logo_blue.png" alt="AriProjects">
+  <span>© 2026 ARIPROJECTS LLC. All rights reserved.</span>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.body.className = 'lang-' + lang;
+    document.documentElement.lang = lang;
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+    localStorage.setItem('ap-lang', lang);
+  }
+  setLang(localStorage.getItem('ap-lang') || 'en');
+</script>
+</body>
+</html>
