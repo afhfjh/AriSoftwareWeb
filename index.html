@@ -357,6 +357,56 @@
   .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color .2s; }
   .footer-links a:hover { color: var(--blue-accent); }
 
+  /* ─── IMPACT VIDEO SECTION ─── */
+  .impact-video-section {
+    position: relative; width: 100%; height: 500px; overflow: hidden;
+    display: flex; align-items: center;
+    background: var(--blue-deep); /* fallback while video loads */
+  }
+  .ivs-video {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; z-index: 0;
+  }
+  .ivs-overlay {
+    position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(
+      to right,
+      rgba(13,43,107,0.90) 0%,
+      rgba(13,43,107,0.72) 45%,
+      rgba(13,43,107,0.32) 100%
+    );
+  }
+  .ivs-content {
+    position: relative; z-index: 2;
+    padding: 0 8%; max-width: 680px;
+  }
+  .ivs-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 2.5px; color: var(--blue-accent); margin-bottom: 24px;
+  }
+  .ivs-eyebrow::before { content:''; display:block; width:24px; height:2px; background:var(--blue-accent); }
+  .ivs-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 2.8vw, 40px); font-weight: 700;
+    color: var(--white); line-height: 1.2; margin-bottom: 20px;
+  }
+  .ivs-title em { font-style: normal; color: var(--blue-accent); }
+  .ivs-subtitle {
+    font-size: 16px; font-weight: 300;
+    color: rgba(255,255,255,0.82); line-height: 1.75;
+    margin-bottom: 36px; max-width: 500px;
+  }
+  .ivs-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--blue-accent); color: var(--white);
+    padding: 13px 28px; border-radius: 7px;
+    font-size: 14px; font-weight: 600; text-decoration: none;
+    transition: background .25s, transform .2s;
+  }
+  .ivs-cta::after { content: '→'; }
+  .ivs-cta:hover { background: var(--blue-mid); transform: translateY(-2px); }
+
   /* ─── HAMBURGER ─── */
   .nav-hamburger {
     display: none; flex-direction: column; justify-content: center; gap: 5px;
@@ -424,6 +474,11 @@
     nav { padding: 0 5%; }
     .nav-links { display: none !important; }
     .nav-hamburger { display: flex; }
+    .impact-video-section { height: 420px; }
+    .ivs-overlay { background: rgba(13,43,107,0.82); }
+    .ivs-content { padding: 0 6%; max-width: 100%; text-align: center; }
+    .ivs-eyebrow { justify-content: center; }
+    .ivs-subtitle { max-width: 100%; }
   }
 </style>
 </head>
@@ -650,6 +705,38 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT VIDEO SECTION -->
+<section class="impact-video-section">
+  <!-- Gradient overlay -->
+  <div class="ivs-overlay"></div>
+
+  <!-- Video — add your file to media/ folder.
+       Poster shows while video loads or as fallback. -->
+  <video class="ivs-video"
+         autoplay muted loop playsinline
+         poster="media/video-poster.jpg"
+         id="ivs-video">
+    <source data-src="media/impact.webm" type="video/webm">
+    <source data-src="media/impact.mp4"  type="video/mp4">
+  </video>
+
+  <!-- Overlay text -->
+  <div class="ivs-content">
+    <div data-lang="en">
+      <span class="ivs-eyebrow">Strategic Consulting</span>
+      <h2 class="ivs-title">Transforming Organizations Through<br><em>Strategy, Experience and Execution</em></h2>
+      <p class="ivs-subtitle">We help organizations deliver complex initiatives, elevate customer experiences and empower teams to perform at their best.</p>
+      <a href="#services" class="ivs-cta">Explore Our Approach</a>
+    </div>
+    <div data-lang="es">
+      <span class="ivs-eyebrow">Consultoría Estratégica</span>
+      <h2 class="ivs-title">Transformando Organizaciones a través de<br><em>Estrategia, Experiencia y Ejecución</em></h2>
+      <p class="ivs-subtitle">Ayudamos a las organizaciones a ejecutar iniciativas complejas, elevar la experiencia del cliente y potenciar equipos para alcanzar su máximo rendimiento.</p>
+      <a href="#services" class="ivs-cta">Explorar Nuestro Enfoque</a>
     </div>
   </div>
 </section>
@@ -1226,6 +1313,21 @@
     });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ── Lazy-load impact video ──
+  const ivsVideo = document.getElementById('ivs-video');
+  if (ivsVideo) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        ivsVideo.querySelectorAll('source[data-src]').forEach(s => {
+          s.src = s.dataset.src;
+        });
+        ivsVideo.load();
+        videoObserver.disconnect();
+      }
+    }, { rootMargin: '200px' });
+    videoObserver.observe(ivsVideo);
+  }
 
   // ── Contact form (Formspree async) ──
   const contactForm = document.getElementById('contact-form');

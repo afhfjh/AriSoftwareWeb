@@ -24,6 +24,19 @@
 
 ## Cambios Importantes
 
+### Sprint 3 (2026-03-05) — ✅ COMPLETADO
+- Privacy policy `privacy.html` — bilingüe EN/ES, noindex, misma identidad visual
+- Social links en footer — comentados, pendientes cuentas reales
+- Logo optimizado a WebP (141KB → 28KB, 80%) con `<picture>` fallback
+- Lighthouse: Performance 93 · Accessibility 94 · Best Practices 100 · SEO 100
+  - Async Google Fonts (elimina render-blocking)
+  - `preconnect` para `fonts.gstatic.com`
+  - Form labels con `for`/`id` (accesibilidad formulario)
+  - `--text-light` oscurecido a `#526B8E` (contraste WCAG AA: 5.4:1)
+  - `aria-label` en nav y mobile-nav
+
+---
+
 ### Sprint 1 (2026-03-04) — ✅ COMPLETADO
 - Repositorio clonado en `C:\dev\AriSoftwareWeb`
 - `ariprojects.html` renombrado a `index.html`
